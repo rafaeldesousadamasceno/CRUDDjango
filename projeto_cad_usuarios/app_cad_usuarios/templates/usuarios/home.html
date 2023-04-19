@@ -1,0 +1,22 @@
+{% extends 'usuarios/base.html' %}
+
+{% block conteudo %}
+<form action="{% url 'listagem_usuarios' %}" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <h1 class="card-title">Cadastro de Usuários</h1>
+        <hr>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nome</label>
+            <input type="text" name="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Cidade</label>
+            <input type="text" name="cidade" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+</form>
+{% endblock %}
